@@ -28,3 +28,30 @@ window.addEventListener('scroll', function() {
         header.classList.remove('scroll')
     }
 })
+
+// Testimonials Swiper
+
+const swiper = new Swiper('.swiper', {
+    slidesPerView: 1,
+    pagination: {
+        el: '.swiper-pagination'
+    },
+    mouseWheel: true,
+    keyboard: true
+  });
+
+//Scroll Reveal
+const scrollReveal = ScrollReveal({
+    origin: 'top',
+    distance: '30px',
+    duration: 700,
+    reset: true
+})
+
+scrollReveal.reveal(
+    `#home .image, #home .text,
+    #about .image, #about .text,
+    #services header, #services .card,
+    #testimonials header, #testimonials .testimonials,
+    #contact .text, #cotnact .links`,
+     {interval: 100})
