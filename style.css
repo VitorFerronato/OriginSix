@@ -13,6 +13,10 @@
   --text-color: hsl(0 0% 46%);
   --text-color-light: hsl(0 0% 98%);
   --body-color: hsl(0 0% 98%);
+
+  /* fonts */
+  --title-font-size: 1.875rem;
+  --subtitle-font-size: 1rem;
 }
 
 /* RESET STYLE ====================*/
@@ -45,12 +49,10 @@ body{
     -webkit-font-smoothing: antialiased;
 }
 
-main{
-    margin-top: calc(var(--header-height) + 1.5rem );
-}
+
 
 .title{
-    font: 700 1.875rem 'Poppins', sans-serif;
+    font: 700 var(--title-font-size) 'Poppins', sans-serif;
     color: var(--title-color);
     -webkit-font-smoothing: auto;
 }
@@ -66,7 +68,7 @@ main{
 }
 
 .section{
-    padding: 5rem 0;
+    padding: calc(5rem + var(--header-height)) 0;
 }
 
 .section header {
@@ -79,6 +81,10 @@ main{
 
 .section .title{
     margin-bottom: 1rem;
+}
+
+.section .subtitle{
+    font-size: var(--subtitle-font-size);
 }
 
 .button{
@@ -151,6 +157,8 @@ main{
 }
 
 
+
+
 /* NAVIGATION ============================*/
 
 nav{
@@ -171,8 +179,11 @@ nav ul li a:hover{
 }
 
 
-nav ul li a:hover{
+nav ul li a:hover,
+nav ul li a.active{
     color: var(--base-color);
+    font-weight: bold;
+    
 }
 
 nav ul li a:after{
@@ -187,7 +198,8 @@ nav ul li a:after{
     transition: width .2s;
 }
 
-nav ul li a:hover::after{
+nav ul li a:hover::after,
+nav ul li a.active::after{
   width: 100%;
 }
 
@@ -467,6 +479,10 @@ footer{
     background: var(--base-color);
 }
 
+footer .section{
+    padding: 4rem 0;
+}
+
 footer .logo {
     display: inline-block;
     margin-bottom: 1.5rem;
@@ -482,6 +498,168 @@ footer i {
     color: var(--text-color-light);
 }
 
-footer .social {
-    grid-auto-flow: column;
+footer .social a {
+    margin-right: 2rem;
+    transition: .3s;
+    display: inline-block;
 }
+
+footer .social a:hover{
+    transform: translateY(-8px);
+}
+
+/* Back to top */
+.back-to-top{
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+
+    background-color: var(--base-color);
+    color: var(--text-color-light);
+
+    padding: .3rem;
+    clip-path: circle();
+    font-size: 1.5rem;
+    line-height: 0;
+    transition: .3s ;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(100%);
+}
+
+.back-to-top.show{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/*====MEDIA QUERY ===== */
+/*Extra large devices: 1200px > */
+@media (min-width: 1200px){
+
+    .container{
+        max-width: 1120px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    main{
+        margin-top: var(--header-height);
+    }
+
+    .section{
+        padding: 10rem 0;
+    }
+
+    .section header,
+    #testimonials header {
+        max-width: 32rem;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    nav .menu{
+        opacity: 1;
+        visibility: visible;
+        top: 0;
+    }
+
+    nav .menu ul{
+        display: flex;
+        gap: 2rem;
+    }
+
+    nav .icon-menu{
+        display: none;
+    }
+
+    nav .menu ul li a.title{
+        font: 400 1rem "DM Sans";
+    }
+
+    #home .container{
+        grid-auto-flow: column;
+        width: fit-content;
+        justify-content: space-between;
+        margin: 0 auto;
+    }
+
+    #home .image{
+        order: 1;
+    }
+    #home .text{
+        order: 0;
+        max-width: 24rem;
+        text-align: left;
+    }
+    .button{
+        height: 3.12rem;
+    }
+
+
+    /* about */
+    #about .container{
+        margin: 0 auto;
+        grid-auto-flow: column;
+    }
+
+    /* Services */
+    .cards {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .card{
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+
+    /* Testimonials */
+    #testimonials .container{
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Contact */
+    #contact .container{
+        grid-auto-flow: column;
+        align-items: center;
+    }
+
+    #contact .text{
+        max-width: 25rem;
+    }
+
+    /* Footer */
+    footer.section{
+        padding: 3.75rem 0;
+    }
+
+    footer .container{
+        grid-auto-flow: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    footer .logo{
+        font-size: 2.25rem;
+    }
+
+
+  
+}
+
+/*large devices: 1023px > */
+
+/*large devices: 992px > */
+@media (min-width: 992px) {
+    :root{
+        --title-font-size: 2.25rem;
+        --subtitle-font-size: 1.125rem;
+    }
+}
+/*Medium devices: 767px > */
+
+/* Responsive */
