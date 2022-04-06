@@ -8,6 +8,7 @@ for (const element of toggle) {
     })
 }
 
+
 //Close menu, click link
 const links = document.querySelectorAll('nav ul li a')
 
@@ -16,6 +17,7 @@ for(const link of links) {
         nav.classList.remove('show')
     })
 }
+
 
 // Shadown header scroll
 const header = document.querySelector('#header')
@@ -29,8 +31,8 @@ window.addEventListener('scroll', function() {
     }
 })
 
-// Testimonials Swiper
 
+// Testimonials Swiper
 const swiper = new Swiper('.swiper', {
     slidesPerView: 1,
     pagination: {
@@ -39,6 +41,7 @@ const swiper = new Swiper('.swiper', {
     mouseWheel: true,
     keyboard: true
   });
+  
 
 //Scroll Reveal
 const scrollReveal = ScrollReveal({
