@@ -4,7 +4,7 @@ const toggle = document.querySelectorAll('nav .toggle')
 
 for (const element of toggle) {
     element.addEventListener('click', function() {
-        nav.classList.toggle('show')
+        nav.classList.toggle('show-menu')
     })
 }
 
