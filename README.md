@@ -2,7 +2,7 @@
 
 <p> Projeto feito durante o NLW together da RocketSeat </p>
 
-##Tecnologias utilizadas
+## Tecnologias utilizadas
 * HTML / CSS
 * Javascript
 
