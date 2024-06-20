@@ -1,9 +1,10 @@
 # OriginSix
+![portifolio](https://github.com/VitorFerronato/OriginSix/assets/94748997/65ec5146-f9d5-4464-a0c8-3bed1827439c)
 
- ## 💻 Projeto 
- Projeto feito durante o NLW together da RocketSeat, apresenta um site customizavel de um salão de beleza. 
+ ## 💻 The project 
+ Project carried out during RocketSeat's NLW together, presents a customizable website for a beauty salon. 
 
-## 🚀 Tecnologias utilizadas
+## 🚀 Technologies
 * HTML / CSS
 * Javascript
 
@@ -12,5 +13,5 @@
 * Scroll Review
 * Ion icons
 
-Link do Figma <br>
-https://www.figma.com/community/file/1009807319507822993
+* ## Deploy
+  [BeautySalon](https://vitorferronatoapps.github.io/beautysalon/)
